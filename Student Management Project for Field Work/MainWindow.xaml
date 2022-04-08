@@ -1,0 +1,87 @@
+﻿<Window x:Class="Student_Management_Project_for_Field_Work.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_Management_Project_for_Field_Work"
+        mc:Ignorable="d"
+        Title="Nazmul's University ACAD Control" Height="400" Width="600" Background="#2C2F33" WindowStyle="None"
+        WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Right">
+            <Button x:Name="minimizeBtn" Background="Transparent" Content="_" Foreground="White" Width="30" Height="30" FontSize="15" 
+                    VerticalContentAlignment="Top" BorderThickness="0" Click="minimizeBtn_Click">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="exitBtn" Background="Transparent" Content="✗" Foreground="White" Width="30" Height="30" FontSize="15" 
+                    VerticalContentAlignment="Center" BorderThickness="0" Click="exitBtn_Click">
+                <Button.Resources>
+                    <Style TargetType="Button">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="Black"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </StackPanel>
+        <TextBlock Text="Nazmul University" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   FontSize="50" FontFamily="Global Serif" Foreground="White" FontStyle="Italic" FontWeight="Bold" Grid.ColumnSpan="4"/>
+        <TextBlock Text="Check Student Information" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"
+                   FontSize="30" FontFamily="Global Serif" Foreground="White" FontStyle="Italic" FontWeight="Bold" 
+                   TextDecorations="Underline"  Margin="20 20" Grid.ColumnSpan="4"/>
+        <TextBlock Text="Enter ID: " Grid.Column="2" Grid.Row="3" FontSize="30" Foreground="WhiteSmoke" FontFamily="Comic Sans MS"/>
+        <TextBox x:Name="idScreen" Grid.Row="3" Grid.Column="3" Width="300"  FontSize="25" 
+                 VerticalAlignment="Center" HorizontalContentAlignment="Center" Background="#FF1C1F48" Foreground="White">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <Button x:Name="searchBtn" Content="Search" Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2" Height="50" Width="200"
+                Margin="30" Background="#FFB5D9F9" FontSize="30" FontStyle="Italic" FontFamily="Comic Sans MS" FontWeight="Bold" Click="searchBtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+
+        </Button>
+        <Button x:Name="adminPanelBtn" Content="ACAD ADMIN Panel" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Height="50" VerticalAlignment="Center"
+                Background="#FFB5D9F9" FontSize="30" FontStyle="Italic" FontFamily="Comic Sans MS" FontWeight="Bold" Click="adminPanelBtn_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="20"/>
+                </Style>
+            </Button.Resources>
+
+        </Button>
+    </Grid>
+</Window>
